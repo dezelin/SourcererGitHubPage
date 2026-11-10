@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sourcerer - Git Repository Management GUI Application</title>
+  <meta name="description" content="Sourcerer is a Git repository management application and GUI tool for developers to browse history, compare diffs, and resolve merges.">
+  <meta name="theme-color" content="#353535">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sourcerer - Git Repository Management GUI Application">
+  <meta property="og:description" content="Sourcerer is a Git repository management application and GUI tool for developers to browse history, compare diffs, and resolve merges.">
+  <meta property="og:image" content="https://www.sourcererapp.com/og-image.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Wizard-hat watermark (HerdrHatMark) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="hat" viewBox="0 0 128 128">
+      <g fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M40 78 L46 28 L66 24 L76 52 L88 78"/>
+        <ellipse cx="64" cy="90" rx="48" ry="14"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <div class="frame">
+    <!-- ========== Header ========== -->
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" aria-label="Sourcerer home">
+          <img src="assets/logo.png" alt="" width="30" height="30">
+          SOURCERER
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a class="nav-link mono" href="#top">Home</a>
+          <a class="nav-link mono" href="#download">Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ========== Hero ========== -->
+      <section class="hero">
+        <svg class="hero__mark" aria-hidden="true" viewBox="0 0 128 128"><use href="#hat"/></svg>
+        <div class="hero__body">
+          <p class="eyebrow">the git client</p>
+          <h1 class="display hero__title">Fast Git client<br><span class="accent">packed with all features.</span></h1>
+          <p class="hero__lede">Sourcerer is a Git client built to simplify version control. Track your project's progress through its visual history, branch and merge with full GitFlow support, and fix issues quickly with built-in conflict resolution and blame. With full LFS support, managing large files is seamless. Sourcerer also integrates with GitHub, GitLab, Bitbucket, Azure DevOps and custom URL issue trackers, so your issues stay right next to your code. Authentication is handled for you too, with per-host SSH key management and HTTP/HTTPS credentials stored in an encrypted vault.</p>
+          <div class="hero__actions">
+            <a class="command" href="#download">
+              <span class="command__prompt"><span>$</span>get sourcerer</span>
+              <span class="command__cta">DOWNLOAD</span>
+            </a>
+          </div>
+          <p class="hero__platforms">Windows · Linux · macOS</p>
+        </div>
+      </section>
+
+      <ul class="stats">
+        <li class="stat"><span class="stat__value">10</span><span class="stat__label">core git tools</span></li>
+        <li class="stat"><span class="stat__value">3</span><span class="stat__label">platforms</span></li>
+      </ul>
+
+      <!-- ========== Feature tour ========== -->
+      <section class="tour" id="features" aria-labelledby="tour-caption">
+        <p class="tour__caption" id="tour-caption"><span><b>FIG 1</b>THE TOOLKIT</span><span>CLICK A SCREENSHOT TO ENLARGE</span></p>
+        <ol class="tour__list">
+
+          <li class="feature">
+            <div class="feature__num"><strong>01</strong><span>history</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Repository history</h2>
+              <p>Navigate through your commit history with an intuitive graph visualization. The timeline shows the complete evolution of your codebase, making it easy to understand complex branching strategies and track the development flow.</p>
+              <ul>
+                <li><b>All branches combined:</b> see every local and remote branch in a single graph, with all merges and forks at a glance.</li>
+                <li><b>Individual branches:</b> focus on a single branch and hide everything else to follow its history without distraction.</li>
+                <li><b>Branch badges:</b> commits are labeled where each branch begins and where its tip currently points, so you always know where a line of work started and how far it has progressed.</li>
+                <li><b>Tag badges:</b> tagged commits are clearly marked, making releases and other milestones easy to spot in the history.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge repository history screenshot">
+              <span class="shot__bar"><span>history</span><span>history-dark.png</span></span>
+              <img src="assets/screenshots/history-dark.png" alt="History screenshot in dark mode" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>02</strong><span>merge</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Merge conflict resolution</h2>
+              <p>Resolve merge conflicts with a merge interface that keeps your changes, their changes, and the merge result in context. Visual indicators highlight conflicting regions, and you can choose changes from either side with confidence.</p>
+              <ul>
+                <li><b>Three-pane layout:</b> both sides of the conflict are shown next to each other, with the editable merge result directly below.</li>
+                <li><b>Pick a side per conflict:</b> use the markers next to each conflicting block to take the change from one side or the other, or edit the result by hand.</li>
+                <li><b>Conflict navigation:</b> jump to the previous or next conflict with the arrow buttons, so nothing is missed in longer files.</li>
+                <li><b>Conflicted files at a glance:</b> files with conflicts are listed with the rest of your changes. Save a resolved file, stage it, and move on to the next one.</li>
+                <li><b>Finish or back out:</b> complete the merge with a commit once everything is resolved, or abort it and return the repository to its previous state.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge merge conflict resolution screenshot">
+              <span class="shot__bar"><span>merge</span><span>merge-onflict.png</span></span>
+              <img src="assets/screenshots/merge-onflict.png" alt="Merge conflict resolution screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>03</strong><span>diff</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Side-by-side diff comparison</h2>
+              <p>Review code changes using a clean diff viewer. Choose between side-by-side or unified modes with readable syntax highlighting. The diff engine highlights changes at the line level so you can quickly understand what changed between commits, branches, or files.</p>
+              <ul>
+                <li><b>Side-by-side or unified:</b> switch between the two layouts with a single click, depending on whether you prefer to compare the old and new versions next to each other or read the changes inline.</li>
+                <li><b>Aligned panes:</b> both sides of a side-by-side diff stay line-aligned and scroll together, so matching code is always next to each other.</li>
+                <li><b>Clear change highlighting:</b> removed lines are marked in red and added lines in green, with line numbers for both versions.</li>
+                <li><b>Syntax highlighting:</b> code keeps its language-aware colors inside the diff, so changes are as easy to read as in your editor.</li>
+                <li><b>Change overview:</b> markers next to the scrollbar show where the changes are in the file, so you can jump straight to them.</li>
+                <li><b>Browse changed files:</b> pick any file from the flat or tree file list to open its diff instantly.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge side-by-side diff screenshot">
+              <span class="shot__bar"><span>diff</span><span>side-by-side-diff.png</span></span>
+              <img src="assets/screenshots/side-by-side-diff.png" alt="Side-by-side diff comparison screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>04</strong><span>blame</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Git blame</h2>
+              <p>Trace each line back to the commit and author that introduced it. Git blame makes it easier to understand why code changed and find the right context when investigating an issue.</p>
+              <ul>
+                <li><b>Line-by-line annotation:</b> every line of the file is shown with its line number and the author who last changed it, right next to the code.</li>
+                <li><b>Full file context:</b> blame shows the complete file, not just a fragment, so you can read the annotated code in context.</li>
+                <li><b>Syntax-highlighted code:</b> the source keeps its language-aware colors, so the annotated file is as readable as in your editor.</li>
+                <li><b>Open from the file list:</b> start blame for any file in the repository straight from the flat or tree file view.</li>
+                <li><b>Faster investigations:</b> see at a glance who to ask about a piece of code, and which parts of a file were written by whom.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge git blame screenshot">
+              <span class="shot__bar"><span>blame</span><span>blame.png</span></span>
+              <img src="assets/screenshots/blame.png" alt="Git blame screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>05</strong><span>gitflow</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">GitFlow and other workflows</h2>
+              <p>Follow standard GitFlow workflows with a clear view of branches and release paths. Keep feature, release, and hotfix work organized throughout the development cycle. GitFlow is not the only option. Sourcerer also supports:</p>
+              <ul>
+                <li><b>GitHub Flow:</b> a lightweight model where you branch off main, open a pull request, and merge back once it is reviewed and ready to deploy.</li>
+                <li><b>GitLab Flow:</b> feature branches plus environment or release branches, such as staging and production, so changes are promoted in a controlled way.</li>
+                <li><b>git-flow-next:</b> a modern take on GitFlow with configurable branch types, prefixes, and merge strategies.</li>
+                <li><b>Graphite:</b> stacked branches that split large changes into small, dependent pull requests that are easier to review and keep rebased.</li>
+                <li><b>Custom workflow editor:</b> define your own branch types, base branches, naming conventions, and merge targets to match how your team works.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge GitFlow screenshot">
+              <span class="shot__bar"><span>gitflow</span><span>gitflow.png</span></span>
+              <img src="assets/screenshots/gitflow.png" alt="GitFlow workflow screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>06</strong><span>lfs</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Git LFS</h2>
+              <p>Manage large files with full Git LFS support. Keep repositories efficient while working with assets and other files that are too large for standard Git storage.</p>
+              <ul>
+                <li><b>Track files from the context menu:</b> right-click any changed file and use the LFS menu to add it to, or remove it from, Git LFS tracking.</li>
+                <li><b>No manual .gitattributes editing:</b> Sourcerer writes the LFS tracking rules for you, so binaries, installers, and media files are handled consistently by everyone on the team.</li>
+                <li><b>Smaller, faster repositories:</b> large files are stored as lightweight pointers in Git history while their content lives in LFS storage, keeping clones and fetches fast.</li>
+                <li><b>Works with your normal workflow:</b> stage, commit, push, and pull LFS-tracked files the same way as any other file, without switching to the command line.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge Git LFS screenshot">
+              <span class="shot__bar"><span>lfs</span><span>lfs.png</span></span>
+              <img src="assets/screenshots/lfs.png" alt="Git LFS screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>07</strong><span>issues</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Issue trackers integration</h2>
+              <p>Browse and manage issues without leaving Sourcerer. Connect your repository to GitHub, GitLab, Bitbucket, Azure DevOps, or any custom URL issue tracker and keep your tasks right next to your code.</p>
+              <ul>
+                <li><b>Built-in tracker tab:</b> the issue tracker opens in its own tab inside Sourcerer, next to your repositories, so you can switch between code and issues instantly.</li>
+                <li><b>The full tracker experience:</b> work with the tracker's own interface, including filters, labels, milestones, and assignees, exactly as you know it from the browser.</li>
+                <li><b>Simple navigation:</b> back, forward, and reload controls let you move around the tracker without opening a separate browser window.</li>
+                <li><b>Configured per repository:</b> each repository can point to its own tracker, whether it is hosted on GitHub, GitLab, Bitbucket, Azure DevOps, or a custom URL.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge issue tracker screenshot">
+              <span class="shot__bar"><span>issues</span><span>issue_tracker.png</span></span>
+              <img src="assets/screenshots/issue_tracker.png" alt="Issue tracker integration screenshot showing a GitHub issues list" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>08</strong><span>ssh</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">SSH key management</h2>
+              <p>Configure individual SSH keys per domain or subdomain, so each Git host uses the right identity automatically. Generate new keys directly in Sourcerer or use the ones you already have.</p>
+              <ul>
+                <li><b>All keys in one place:</b> a dedicated SSH keys tab lists every host with its key name, private key path, and creation date.</li>
+                <li><b>Generate new key pairs:</b> create a new key with a name of your choice, such as id_rsa_github or id_rsa_gitlab, without touching the command line.</li>
+                <li><b>Add existing keys:</b> register keys you already use and assign them to the hosts they belong to.</li>
+                <li><b>One identity per host:</b> keep separate keys for GitHub, Bitbucket, Azure DevOps, or your company server, and Sourcerer picks the right one automatically for every clone, fetch, and push.</li>
+                <li><b>Edit and clean up:</b> change a host's key assignment or delete entries you no longer need.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge SSH key management screenshot">
+              <span class="shot__bar"><span>ssh</span><span>ssh_key_management.png</span></span>
+              <img src="assets/screenshots/ssh_key_management.png" alt="SSH key management screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>09</strong><span>credentials</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">HTTP/HTTPS credentials management</h2>
+              <p>Store repository credentials in an AES-encrypted vault whose master key is kept in your operating system's credentials wallet. Each credential is assigned to a local repository path, so every repository signs in with the right account.</p>
+              <ul>
+                <li><b>Secure by design:</b> passwords and access tokens are never stored in plain text. The vault is encrypted with AES, and its master key is protected by Windows Credential Manager, the macOS Keychain, or the Linux secret service.</li>
+                <li><b>Per-repository accounts:</b> use different accounts for work and personal projects, or for different clients on the same Git host, without credentials getting mixed up.</li>
+                <li><b>Overview of stored credentials:</b> a dedicated Git credentials tab lists each repository path with its username and the date the credential was stored.</li>
+                <li><b>Easy maintenance:</b> update a credential when a password or token changes, or delete the ones you no longer need.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge credentials management screenshot">
+              <span class="shot__bar"><span>credentials</span><span>crdentials_management.png</span></span>
+              <img src="assets/screenshots/crdentials_management.png" alt="Stored Git credentials screenshot" loading="lazy">
+            </button>
+          </li>
+
+          <li class="feature">
+            <div class="feature__num"><strong>10</strong><span>worktrees</span></div>
+            <div class="feature__text">
+              <h2 class="feature__title">Git worktrees</h2>
+              <p>A worktree is an additional working directory linked to the same repository. Check out several branches side by side, each in its own folder, without stashing, re-cloning, or losing your build state. It is ideal for hotfixes, reviews, and long-running builds.</p>
+              <ul>
+                <li><b>Worktrees panel:</b> all worktrees of the repository are listed in their own sidebar panel, next to branches, tags, stashes, and remotes, with the branch each one has checked out.</li>
+                <li><b>Quick creation:</b> add a worktree in a few steps. Pick a folder, choose an existing branch, or tick "Create new branch" and give it a name, then confirm.</li>
+                <li><b>Open with a single click:</b> open any worktree in a new container and work on it with the full set of Sourcerer tools, while the main working directory stays untouched.</li>
+                <li><b>Lock and unlock:</b> lock a worktree to protect it from pruning, for example when it lives on a removable drive or a network share, and unlock it when it is no longer needed.</li>
+                <li><b>Clean removal:</b> remove a worktree when you are done, and Sourcerer cleans up the linked working directory for you.</li>
+                <li><b>Shared history:</b> every worktree uses the same repository, so commits, branches, and tags made in one are immediately visible in all the others, with no extra clones and no wasted disk space.</li>
+              </ul>
+            </div>
+            <button class="shot" type="button" aria-label="Enlarge git worktrees screenshot">
+              <span class="shot__bar"><span>worktrees</span><span>add_worktree.png</span></span>
+              <img src="assets/screenshots/add_worktree.png" alt="Add worktree dialog screenshot" loading="lazy">
+            </button>
+          </li>
+
+        </ol>
+      </section>
+
+      <!-- ========== Download ========== -->
+      <section class="download" id="download" aria-labelledby="download-title">
+        <svg class="download__mark" aria-hidden="true" viewBox="0 0 128 128"><use href="#hat"/></svg>
+        <div class="download__body">
+          <p class="eyebrow">downloads</p>
+          <h2 class="display download__title" id="download-title">Download <span class="accent">Sourcerer.</span></h2>
+          <p class="download__lede">Download the latest version for your platform.</p>
+
+          <div class="platforms">
+            <div class="platform">
+              <div class="platform__inner">
+                <div class="platform__bar"><span>GitHub</span><span>Releases</span></div>
+                <div class="platform__body">
+                  <h3 class="platform__name">GitHub Release</h3>
+                  <p class="platform__desc">Installers and release notes</p>
+                  <a class="btn btn--solid btn--block" href="https://github.com/Sourcerer-Team/Sourcerer/releases">Download</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="site-footer">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="#top">
+            <img src="assets/logo.png" alt="" width="32" height="32">
+            SOURCERER
+          </a>
+          <p>The Git repository management application and GUI tool.</p>
+        </div>
+        <div>
+          <h2 class="footer__heading">RESOURCES</h2>
+          <ul class="footer__links">
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">© <span id="year">2026</span> Sourcerer. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+    <button class="lightbox__close" type="button" aria-label="Close image">✕</button>
+    <img alt="">
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
